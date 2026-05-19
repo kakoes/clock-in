@@ -1,17 +1,134 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
 
-  <title>Clock-In</title>
+  <meta charset="UTF-8">
 
-  <link rel="stylesheet" href="style.css">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+  <title>RDC Operations Terminal</title>
+
+  <link rel="preconnect"
+        href="https://fonts.googleapis.com">
+
+  <link rel="preconnect"
+        href="https://fonts.gstatic.com"
+        crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600;700&display=swap"
+        rel="stylesheet">
+
+  <link rel="stylesheet"
+        href="style.css">
 
 </head>
 
 <body>
 
-  <h1>Clock-In System Online</h1>
+  <div class="background-glow"></div>
+
+  <div class="card">
+
+    <div class="title">
+      RDC TERMINAL
+    </div>
+
+    <div class="subtitle">
+      Secure Operations Attendance
+    </div>
+
+    <div class="location-box">
+
+      <div class="location-label">
+        CURRENT LOCATION
+      </div>
+
+      <div id="liveAddress">
+        Detecting GPS location...
+      </div>
+
+    </div>
+
+    <div class="tabs">
+
+      <button class="tab active"
+              id="clockInTab">
+        CLOCK IN
+      </button>
+
+      <button class="tab"
+              id="clockOutTab">
+        CLOCK OUT
+      </button>
+
+    </div>
+
+    <!-- CLOCK IN -->
+
+    <div id="clockInForm">
+
+      <input
+        type="text"
+        id="name"
+        placeholder="Manager Name">
+
+      <input
+        type="tel"
+        id="phoneIn"
+        placeholder="Phone Number">
+
+      <input
+        type="text"
+        id="store"
+        maxlength="7"
+        inputmode="numeric"
+        placeholder="7-Digit Store #">
+
+      <textarea
+        id="purpose"
+        rows="3"
+        placeholder="Purpose of Visit"></textarea>
+
+      <button
+        class="submit-btn in-btn"
+        id="clockInBtn">
+
+        Verify & Clock In
+
+      </button>
+
+    </div>
+
+    <!-- CLOCK OUT -->
+
+    <div id="clockOutForm"
+         class="hidden">
+
+      <input
+        type="tel"
+        id="phoneOut"
+        placeholder="Phone Number">
+
+      <button
+        class="submit-btn out-btn"
+        id="clockOutBtn">
+
+        Verify & Clock Out
+
+      </button>
+
+    </div>
+
+    <div class="loader"
+         id="loader"></div>
+
+    <div id="status">
+      System Ready
+    </div>
+
+  </div>
 
   <script src="app.js"></script>
 
